@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GersonandreTailoringmanagementAppApplication<gersonandre-tailoringmanagement-app>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.GersonandreTailoringmanagementAppApplication",
+            "projectName": "gersonandre-tailoringmanagement-app",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
