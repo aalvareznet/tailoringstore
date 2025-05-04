@@ -9,13 +9,23 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "fabric")
-public class Fabric {
+@Table(name = "jacket")
+public class Jacket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    String description;
-    Double quantity;
-    //TODO: Add a field for the provider
-    String url;
+    //TODO: add a field for the fabric
+    Double length;
+    Double chest;
+    Double waist;
+    Double hip;
+    Double back;
+    Double shoulder;
+    Double fit;
+    Double lm;
+    Double elbow;
+    Double fist;
+    Double vline;
+    String specification;
+
 }

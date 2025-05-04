@@ -9,8 +9,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "fabric")
-public class Fabric {
+@Table(name = "leather")
+public class Leather {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;

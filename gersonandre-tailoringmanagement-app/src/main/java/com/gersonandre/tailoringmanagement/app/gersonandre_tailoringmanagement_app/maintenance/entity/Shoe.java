@@ -9,13 +9,13 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "fabric")
-public class Fabric {
+@Table(name = "shoe")
+public class Shoe {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    String description;
-    Double quantity;
-    //TODO: Add a field for the provider
-    String url;
+    //TODO: Add a field for the leather
+    String size;
+    String specifiaction;
 }
