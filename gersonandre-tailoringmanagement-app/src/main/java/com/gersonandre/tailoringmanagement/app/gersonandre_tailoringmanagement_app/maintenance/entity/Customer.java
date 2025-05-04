@@ -30,6 +30,7 @@ public class Customer {
     String phone;
     String address;
     @Enumerated(EnumType.STRING)
+    @Column(name = "customer_rank", nullable = false)
     CustomerRank rank;
 
 }
