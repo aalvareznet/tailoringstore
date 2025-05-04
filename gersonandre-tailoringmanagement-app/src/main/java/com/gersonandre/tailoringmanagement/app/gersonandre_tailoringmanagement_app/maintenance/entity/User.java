@@ -28,8 +28,10 @@ public class User {
     Integer id;
     @Column(nullable = false)
     String username;
+    @Column(nullable = false)
     String password;
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     Role role;
 
 

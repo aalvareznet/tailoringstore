@@ -1,5 +1,6 @@
 package com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.maintenance.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,10 +20,16 @@ public class Pant {
     @ManyToOne
     @JoinColumn(name = "fabric_id", nullable = false)
     Fabric fabric;
+    @Column(nullable = false)
     Double length;
+    @Column(nullable = false)
     Double crouch;
+    @Column(nullable = false)
     Double waist;
+    @Column(nullable = false)
     Double hip;
+    @Column(nullable = false)
     Double knee;
+    @Column(nullable = false)
     Double feet;
 }

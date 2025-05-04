@@ -19,13 +19,19 @@ public class ProductInventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @Column(nullable = false)
     String name;
+    @Column(nullable = false)
     String description;
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     ProductType type;
+    @Column(nullable = false)
     Integer quantity;
+    @Column(nullable = false)
     Double price;
-    @Column(name = "image_url")
+    @Column(name = "image_url", nullable = false)
     String imageUrl;
+    @Column(nullable = false)
     String size;
 }

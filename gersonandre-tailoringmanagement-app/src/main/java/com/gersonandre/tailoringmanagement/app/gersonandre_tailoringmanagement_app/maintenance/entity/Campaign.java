@@ -20,11 +20,13 @@ public class Campaign {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @Column(nullable = false)
     String name;
+    @Column(nullable = false)
     String message;
-    @Column(name = "start_date")
+    @Column(name = "start_date", nullable = false)
     LocalDateTime startDate;
-    @Column(name = "end_date")
+    @Column(name = "end_date", nullable = false)
     LocalDateTime endDate;
     @ManyToOne
     @JoinColumn(name = "segment_id", nullable = false)

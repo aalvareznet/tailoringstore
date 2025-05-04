@@ -32,7 +32,4 @@ public class Suit {
     @OneToOne
     @JoinColumn(name = "accessory_id", nullable = true)
     Accessory accessory;
-    @OneToOne
-    @JoinColumn(name = "shoe_id", nullable = true)
-    Shoe shoe;
 }

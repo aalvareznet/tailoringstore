@@ -20,11 +20,13 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    @Column(name="first_name")
+    @Column(name="first_name", nullable = false)
     String firstName;
-    @Column(name="last_name")
+    @Column(name="last_name", nullable = false)
     String lastName;
+    @Column(nullable = false)
     String email;
+    @Column(nullable = false)
     String phone;
     String address;
     @Enumerated(EnumType.STRING)

@@ -16,11 +16,16 @@ public class Factory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @Column(nullable = false)
     String name;
+    @Column(nullable = false)
     String address;
+    @Column(nullable = false)
     String phone;
+    @Column(nullable = false)
     String email;
-    @Column(name = "contact_person")
+    @Column(name = "contact_person", nullable = false)
     String contactPerson;
+    @Column(nullable = false)
     String description;
 }

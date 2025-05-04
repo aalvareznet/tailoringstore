@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.maintenance.entity.enums.AppointmentStatus;
 import com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.maintenance.entity.enums.AppointmentType;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -26,10 +27,14 @@ public class Appointment {
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     Customer customer;
+    @Column(nullable = false)
     LocalDateTime appointmentDate;
+    @Column(nullable = false)
     String description;
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     AppointmentType type;   
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     AppointmentStatus status;
 }

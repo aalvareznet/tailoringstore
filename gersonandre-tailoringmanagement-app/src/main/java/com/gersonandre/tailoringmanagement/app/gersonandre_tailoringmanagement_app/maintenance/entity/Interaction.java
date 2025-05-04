@@ -24,9 +24,11 @@ public class Interaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     InteractionType type;
-    @Column(name = "ocurred_at")
+    @Column(name = "ocurred_at", nullable = false)
     LocalDateTime ocurredAt;
+    @Column(nullable = false)
     String notes;
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)

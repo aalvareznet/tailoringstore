@@ -20,9 +20,11 @@ public class Log {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    @Column(name = "created_at")
+    @Column(name = "created_at", nullable = false)
     LocalDateTime createdAt;
+    @Column(nullable = false)
     String action;
+    @Column(nullable = false)
     String entity;
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
