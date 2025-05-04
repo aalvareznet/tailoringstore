@@ -11,6 +11,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -21,7 +23,6 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    //TODO: Add a field for the suit and shoe, they must be nullable
     @Column(name = "order_date")
     LocalDateTime oderDate;
     @Column(name = "delivery_date")
@@ -30,4 +31,10 @@ public class Order {
     LocalDateTime eventDate;
     @Enumerated(EnumType.STRING)
     OrderStatus status;
+    @OneToOne
+    @JoinColumn(name = "suit_id", nullable = true)
+    Suit suit;
+    @OneToOne
+    @JoinColumn(name = "shoe_id", nullable = true)
+    Shoe shoe;
 }

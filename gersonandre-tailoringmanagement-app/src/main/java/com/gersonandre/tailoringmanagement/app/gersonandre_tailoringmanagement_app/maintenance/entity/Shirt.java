@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -15,7 +17,9 @@ public class Shirt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    //TODO: Add a field for the fabric
+    @ManyToOne
+    @JoinColumn(name = "fabric_id", nullable = false)
+    Fabric fabric;
     Double neck;
     Double sleeve;
     String specification;
