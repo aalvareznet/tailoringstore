@@ -1,0 +1,18 @@
+package com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.config.security.auth;
+
+import com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.maintenance.entity.enums.Role;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class RegisterRequest {
+    String username;
+    String password;
+    Role role;
+}
