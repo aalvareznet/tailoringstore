@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.config.security.jwt.JwtService;
 import com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.maintenance.entity.User;
+import com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.maintenance.entity.enums.Role;
 import com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.maintenance.repository.UserRepo;
 
 @Service
@@ -26,14 +27,16 @@ public class AuthService {
                 .build();
     }
 
-    public User register(RegisterRequest request) {
+    public AuthResponse register(RegisterRequest request) {
         User user = User.builder()
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(request.getRole())
+                .role(Role.CUSTOMER)
                 .build();
         userRepository.save(user);
 
-        return user;
+        return AuthResponse.builder()
+                .token(jwtService.getToken(user))
+                .build();
     }
 }
