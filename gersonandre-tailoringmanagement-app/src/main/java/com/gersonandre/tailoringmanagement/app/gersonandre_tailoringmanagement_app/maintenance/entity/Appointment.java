@@ -2,11 +2,13 @@ package com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_
 
 import java.time.LocalDateTime;
 
+import com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.config.app.AuditEntityListener;
 import com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.maintenance.entity.enums.AppointmentStatus;
 import com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.maintenance.entity.enums.AppointmentType;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +22,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "appointment")
+@EntityListeners(AuditEntityListener.class)
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

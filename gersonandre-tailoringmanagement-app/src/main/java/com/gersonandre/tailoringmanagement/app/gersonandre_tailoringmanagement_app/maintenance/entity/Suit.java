@@ -1,6 +1,9 @@
 package com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.maintenance.entity;
 
+import com.gersonandre.tailoringmanagement.app.gersonandre_tailoringmanagement_app.config.app.AuditEntityListener;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -12,6 +15,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "suit")
+@EntityListeners(AuditEntityListener.class)
 public class Suit {
 
     @Id
